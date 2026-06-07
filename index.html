@@ -325,6 +325,101 @@
         line-height: 1.55;
       }
 
+      .buy-box {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+        gap: 28px;
+        align-items: stretch;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .buy-main {
+        padding: 28px;
+      }
+
+      .buy-main h2 {
+        max-width: 620px;
+      }
+
+      .buy-main p {
+        margin-top: 16px;
+        max-width: 660px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .buy-steps {
+        display: grid;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .buy-steps div {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: start;
+        color: var(--ink);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .buy-steps span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 760;
+      }
+
+      .buy-card {
+        display: grid;
+        align-content: start;
+        gap: 18px;
+        background: var(--soft);
+        border-left: 1px solid var(--line);
+        padding: 28px;
+      }
+
+      .price-line {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .price-line strong {
+        font-size: 42px;
+        line-height: 1;
+      }
+
+      .price-line span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .buy-card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .email-note {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
       .proof-panel {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
@@ -479,9 +574,15 @@
       @media (max-width: 940px) {
         .hero,
         .section-head,
+        .buy-box,
         .proof-panel,
         .start {
           grid-template-columns: 1fr;
+        }
+
+        .buy-card {
+          border-left: 0;
+          border-top: 1px solid var(--line);
         }
 
         .hero {
@@ -548,6 +649,11 @@
         .deliverables,
         .steps {
           grid-template-columns: 1fr;
+        }
+
+        .buy-main,
+        .buy-card {
+          padding: 22px;
         }
 
         .step {
@@ -680,6 +786,31 @@
                 <h3>Ship and verify</h3>
                 <p>Check desktop, mobile, CTA clarity, and the next step after the visitor clicks.</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="buy">
+          <div class="shell">
+            <div class="buy-box">
+              <div class="buy-main">
+                <h2>Ready to buy the first fix?</h2>
+                <p>Send the page URL and target action by email. I will confirm the one-page scope, send the payment step you prefer, and deliver the fix within 24 hours after payment and intake details are confirmed.</p>
+                <div class="buy-steps" aria-label="Purchase steps">
+                  <div><span>1</span><strong>Email the page URL and the action you want more visitors to take.</strong></div>
+                  <div><span>2</span><strong>Approve the one-page scope and pay the fixed first-fix fee.</strong></div>
+                  <div><span>3</span><strong>Receive one prioritized issue, replacement copy/layout notes, and verification checks.</strong></div>
+                </div>
+              </div>
+              <aside class="buy-card" aria-label="Price and booking details">
+                <div class="price-line">
+                  <strong>$100</strong>
+                  <span>fixed first fix</span>
+                </div>
+                <p>Direct email is fastest. If you need a marketplace, invoice, or contract platform, name the path you prefer.</p>
+                <a class="button" href="mailto:iankim0133@gmail.com?subject=Book%20the%2024-Hour%20Revenue%20Leak%20Fix&body=Page%20URL%3A%0ATarget%20visitor%20action%3A%0APreferred%20payment%20method%3A%0AAnything%20you%20already%20know%20is%20not%20working%3A">Email the page and payment preference</a>
+                <div class="email-note">No revenue guarantee. The guarantee is delivery of the scoped page-level fix within 24 hours after payment and intake confirmation.</div>
+              </aside>
             </div>
           </div>
         </section>
