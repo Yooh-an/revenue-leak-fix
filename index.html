@@ -610,6 +610,37 @@
         gap: 10px;
       }
 
+      .share-card {
+        display: grid;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 14px;
+      }
+
+      .share-card strong {
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .share-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .share-card textarea {
+        min-height: 96px;
+        margin-top: 0;
+      }
+
+      .share-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
       .proof-panel {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
@@ -987,6 +1018,17 @@
                 <a class="button secondary" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the full $29 report</a>
                 <button class="button ghost" type="button" id="copyPreviewButton" disabled>Copy preview summary</button>
               </div>
+              <div class="share-card" id="shareCard" hidden>
+                <strong>Turn your score into inbound traffic.</strong>
+                <p>Share the public score post to ask for feedback. The free checker link stays attached so other founders can run it too.</p>
+                <textarea id="sharePostText" readonly aria-label="Generated share post"></textarea>
+                <div class="share-actions">
+                  <button class="button ghost" type="button" id="copySharePostButton">Copy share post</button>
+                  <a class="button secondary" id="shareX" href="https://x.com/intent/tweet" target="_blank" rel="noopener">Share on X</a>
+                  <a class="button secondary" id="shareLinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fyooh-an.github.io%2Frevenue-leak-fix%2F" target="_blank" rel="noopener">Share on LinkedIn</a>
+                </div>
+                <div class="status" id="shareStatus" aria-live="polite"></div>
+              </div>
               <div class="status" id="previewCopyStatus" aria-live="polite"></div>
             </div>
           </form>
@@ -1173,7 +1215,15 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
       const previewResults = document.querySelector("#previewResults");
       const copyPreviewButton = document.querySelector("#copyPreviewButton");
       const previewCopyStatus = document.querySelector("#previewCopyStatus");
+      const shareCard = document.querySelector("#shareCard");
+      const sharePostText = document.querySelector("#sharePostText");
+      const copySharePostButton = document.querySelector("#copySharePostButton");
+      const shareX = document.querySelector("#shareX");
+      const shareLinkedIn = document.querySelector("#shareLinkedIn");
+      const shareStatus = document.querySelector("#shareStatus");
       let latestPreviewSummary = "";
+      let latestSharePost = "";
+      const checkerUrl = "https://yooh-an.github.io/revenue-leak-fix/";
 
       const goalCopy = {
         signup: {
@@ -1406,6 +1456,20 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
           "Full report: https://www.paypal.com/ncp/payment/36Q544XLNRGN8"
         ].join("\n");
 
+        latestSharePost = [
+          `I ran a free landing page revenue leak check for ${host}.`,
+          `Score: ${preview.score}/100.`,
+          `Biggest issue: ${preview.findings[0].title}`,
+          "",
+          `Run your own check: ${checkerUrl}`
+        ].join("\n");
+
+        shareCard.hidden = false;
+        sharePostText.value = latestSharePost;
+        shareX.href = `https://x.com/intent/tweet?text=${encodeURIComponent(latestSharePost)}`;
+        shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(checkerUrl)}`;
+        shareStatus.textContent = "";
+
         intakeText.value = [
           "Send me:",
           `1. Page URL: ${rawUrl}`,
@@ -1428,6 +1492,17 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
           previewCopyStatus.textContent = "Preview summary copied.";
         } catch {
           previewCopyStatus.textContent = "Copy failed. Select the generated findings manually.";
+        }
+      });
+
+      copySharePostButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(latestSharePost);
+          shareStatus.textContent = "Share post copied.";
+        } catch {
+          sharePostText.focus();
+          sharePostText.select();
+          shareStatus.textContent = "Copy failed. Select and copy the share post manually.";
         }
       });
     </script>
