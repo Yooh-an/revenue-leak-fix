@@ -2,7 +2,7 @@
 
 Static landing page for a `$29` AI-generated landing page conversion report.
 
-The first screen now includes a free heuristic preview so visitors can enter a landing page URL and target action before buying the full report.
+The first screen now includes a scored free heuristic preview so visitors can enter the landing page URL, target action, headline, CTA, proof placement, pricing clarity, and mobile status before buying the full report.
 
 SEO support files:
 
