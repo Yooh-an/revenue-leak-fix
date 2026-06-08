@@ -9,6 +9,11 @@ SEO support files:
 - `robots.txt`
 - `sitemap.xml`
 
+SEO landing surfaces:
+
+- `index.html`
+- `examples.html`
+
 Live page: https://yooh-an.github.io/revenue-leak-fix/
 
 Payment link: https://www.paypal.com/ncp/payment/36Q544XLNRGN8
