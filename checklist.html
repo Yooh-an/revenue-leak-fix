@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page Conversion Checklist | Free Revenue Leak Score</title>
+    <link rel="icon" href="data:,">
+    <link rel="canonical" href="https://yooh-an.github.io/revenue-leak-fix/checklist.html">
+    <meta
+      name="description"
+      content="Use a free landing page conversion checklist to score CTA clarity, trust proof, pricing friction, forms, and mobile revenue leaks before buying a $29 report."
+    >
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Landing Page Conversion Checklist">
+    <meta property="og:description" content="Score the conversion leaks that stop visitors from buying, booking, signing up, or submitting a lead.">
+    <meta property="og:url" content="https://yooh-an.github.io/revenue-leak-fix/checklist.html">
+    <meta property="og:image" content="https://yooh-an.github.io/revenue-leak-fix/assets/audit-report-visual.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Landing Page Conversion Checklist">
+    <meta name="twitter:description" content="A free revenue leak checklist for CTA, trust, pricing, forms, and mobile conversion checks.">
+    <meta name="twitter:image" content="https://yooh-an.github.io/revenue-leak-fix/assets/audit-report-visual.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a landing page conversion checklist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A landing page conversion checklist is a short review of the page elements that affect visitor action: outcome clarity, CTA visibility, trust proof, pricing clarity, form friction, and mobile first-screen usability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What score means my page is leaking revenue?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A score under 70 suggests the page has visible conversion leaks. Under 50 means the first screen, CTA, trust, or form flow likely needs a focused rewrite before more traffic is worth buying."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the paid report include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The paid report reviews one landing page and returns prioritized revenue leaks, CTA and trust diagnosis, copy and layout fixes, mobile checks, and verification steps."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #151513;
+        --muted: #5e625f;
+        --line: #dddfd9;
+        --soft: #f5f6f1;
+        --green: #178a4a;
+        --green-dark: #0d5f35;
+        --amber: #c5791f;
+        --red: #b94a3a;
+        --blue: #315f8f;
+        --shadow: 0 22px 60px rgba(25, 29, 25, 0.12);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 76px;
+        border-bottom: 1px solid var(--line);
+        gap: 24px;
+      }
+
+      .brand {
+        font-weight: 760;
+        font-size: 15px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        background: var(--ink);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 720;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .button.ghost {
+        background: var(--soft);
+        color: var(--ink);
+        border-color: var(--line);
+      }
+
+      .hero {
+        padding: 66px 0 58px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 920px;
+        font-size: clamp(42px, 5.8vw, 76px);
+        line-height: 0.98;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 720px;
+        margin-top: 28px;
+      }
+
+      .fact {
+        border-top: 2px solid var(--ink);
+        padding-top: 11px;
+      }
+
+      .fact strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      .fact span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      section {
+        border-top: 1px solid var(--line);
+        padding: 62px 0;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 0.72fr 1fr;
+        gap: 36px;
+        align-items: start;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: clamp(30px, 3.2vw, 46px);
+        line-height: 1.04;
+        font-weight: 810;
+      }
+
+      .section-head p,
+      .note {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .tool {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .checklist,
+      .score-card,
+      .buy-box,
+      .faq,
+      .range-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 18px;
+        padding: 24px;
+      }
+
+      fieldset {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0 0 18px;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      fieldset:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      legend {
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 780;
+      }
+
+      label.check {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 10px;
+        align-items: start;
+        color: var(--ink);
+        font-size: 14px;
+        line-height: 1.45;
+        cursor: pointer;
+      }
+
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin: 2px 0 0;
+        accent-color: var(--green);
+      }
+
+      .score-card {
+        position: sticky;
+        top: 16px;
+        display: grid;
+        gap: 18px;
+        padding: 24px;
+        background: var(--soft);
+      }
+
+      .score-line {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .score-line strong {
+        font-size: 58px;
+        line-height: 1;
+      }
+
+      .score-line span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .status {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .issues {
+        display: grid;
+        gap: 10px;
+      }
+
+      .issue {
+        display: grid;
+        gap: 6px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 13px;
+      }
+
+      .issue strong {
+        color: var(--red);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .issue span {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 132px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: #fff;
+        color: var(--ink);
+        font: 13px/1.45 inherit;
+        resize: vertical;
+      }
+
+      .mini-status {
+        min-height: 18px;
+        color: var(--green-dark);
+        font-size: 12px;
+      }
+
+      .ranges {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .range-card {
+        min-height: 150px;
+        padding: 20px;
+      }
+
+      .range-card strong {
+        display: block;
+        font-size: 19px;
+      }
+
+      .range-card p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .buy-box {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(290px, 0.58fr);
+        gap: 24px;
+        overflow: hidden;
+      }
+
+      .buy-main,
+      .buy-card {
+        padding: 26px;
+      }
+
+      .buy-main p {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .buy-card {
+        display: grid;
+        gap: 16px;
+        align-content: start;
+        background: var(--soft);
+        border-left: 1px solid var(--line);
+      }
+
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .price strong {
+        font-size: 42px;
+        line-height: 1;
+      }
+
+      .price span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .faq-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .faq {
+        padding: 20px;
+      }
+
+      .faq h3 {
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      .faq p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 860px) {
+        .nav {
+          align-items: flex-start;
+          padding: 18px 0;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          gap: 14px;
+        }
+
+        .facts,
+        .ranges,
+        .faq-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .section-head,
+        .tool,
+        .buy-box {
+          grid-template-columns: 1fr;
+        }
+
+        .score-card {
+          position: static;
+        }
+
+        .buy-card {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .shell {
+          width: min(100% - 28px, 1120px);
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+
+        .facts,
+        .ranges,
+        .faq-list {
+          grid-template-columns: 1fr;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell nav">
+      <div class="brand">AI Landing Page Revenue Leak Report</div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Checker</a>
+        <a href="examples.html">Examples</a>
+        <a href="#checklist">Checklist</a>
+        <a href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="shell hero">
+        <h1>Landing page conversion checklist that catches revenue leaks.</h1>
+        <p>Use this free checklist to score the things that usually stop visitors from buying, booking, signing up, or submitting a lead: CTA clarity, trust proof, pricing friction, form effort, and mobile first-screen visibility.</p>
+        <div class="actions">
+          <a class="button" href="#checklist">Score your page</a>
+          <a class="button secondary" href="index.html#previewUrl">Run the free checker</a>
+          <a class="button ghost" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
+        </div>
+        <div class="facts" aria-label="Checklist facts">
+          <div class="fact"><strong>12 checks</strong><span>CTA, trust, form, pricing, and mobile</span></div>
+          <div class="fact"><strong>100 points</strong><span>A simple conversion clarity score</span></div>
+          <div class="fact"><strong>Free first</strong><span>Use the checklist before buying anything</span></div>
+          <div class="fact"><strong>$29</strong><span>Optional one-page paid report</span></div>
+        </div>
+      </section>
+
+      <section id="checklist">
+        <div class="shell">
+          <div class="section-head">
+            <h2>Score your page before buying more traffic.</h2>
+            <p>Check only what a visitor can see or understand quickly. A low score does not mean the business is bad. It means the page is making the visitor work too hard before the next step.</p>
+          </div>
+
+          <div class="tool">
+            <form class="checklist" id="checklistForm">
+              <fieldset>
+                <legend>First-screen clarity</legend>
+                <label class="check"><input type="checkbox" data-points="9" data-issue="The first screen does not name the visitor outcome." data-fix="Rewrite the headline around the customer result, not the product category."><span>The headline names the visitor outcome, not just the product category.</span></label>
+                <label class="check"><input type="checkbox" data-points="9" data-issue="The main CTA is not visible on the first mobile screen." data-fix="Move one primary CTA above the fold and keep it visible before secondary links."><span>The primary CTA is visible without scrolling on a phone-sized screen.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="The CTA text is too generic to create intent." data-fix="Change the button from generic action text to the specific next step or outcome."><span>The CTA text says what happens next, not only "Submit", "Start", or "Learn more".</span></label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Trust and risk</legend>
+                <label class="check"><input type="checkbox" data-points="9" data-issue="Proof is too far away from the first CTA." data-fix="Move a testimonial, customer logo, metric, or guarantee next to the first decision point."><span>Trust proof appears near the first CTA.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="Pricing or commitment risk is unclear before the visitor acts." data-fix="State price, trial terms, refund terms, or what happens after the form before asking for commitment."><span>Pricing, trial terms, or commitment risk is clear before the visitor acts.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="The page does not show who has used or trusted the offer." data-fix="Add one concrete customer, metric, review, result, or before-after proof."><span>The page includes a concrete customer, metric, result, or review.</span></label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Friction and flow</legend>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="The first screen has too many competing actions." data-fix="Keep one primary action and move secondary links below the first proof point."><span>The first screen has one obvious primary action.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="The form asks for more fields than the offer justifies." data-fix="Remove nonessential fields or split them after the first conversion step."><span>Forms ask only for fields needed at this step.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="The visitor cannot tell what happens after clicking." data-fix="Add a short expectation line near the CTA: timing, delivery, call length, or next email."><span>The page says what happens after the visitor clicks or submits.</span></label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Mobile and purchase path</legend>
+                <label class="check"><input type="checkbox" data-points="9" data-issue="The mobile first screen hides the outcome, proof, or action." data-fix="At 390px width, keep outcome, proof, and action visible without hunting."><span>On mobile, outcome, proof, and action are visible quickly.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="Buttons and links are hard to tap or compare on mobile." data-fix="Use full-width or clearly separated tap targets with enough spacing."><span>Buttons and important links are easy to tap on mobile.</span></label>
+                <label class="check"><input type="checkbox" data-points="8" data-issue="The booking, checkout, signup, or lead path has not been verified." data-fix="Run the path once from the landing page and fix any broken, confusing, or delayed step."><span>The booking, checkout, signup, or lead-submit path has been tested end to end.</span></label>
+              </fieldset>
+            </form>
+
+            <aside class="score-card" aria-live="polite">
+              <div>
+                <div class="score-line"><strong id="scoreValue">0</strong><span>/100</span></div>
+                <p class="status" id="scoreStatus">Check the items your page already satisfies to see the likely conversion leak risk.</p>
+              </div>
+              <div class="issues" id="issueList"></div>
+              <textarea id="summaryText" readonly>Landing page checklist score: 0/100. Check items to generate a summary.</textarea>
+              <div class="actions">
+                <button class="button" type="button" id="copySummary">Copy summary</button>
+                <a class="button secondary" id="openChecker" href="index.html?site=checklist-score&score=0&issue=Checklist%20not%20completed#preview">Open free checker</a>
+              </div>
+              <div class="mini-status" id="copyStatus"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="section-head">
+            <h2>What the score means</h2>
+            <p>The score is a heuristic, not a guarantee. It is useful because the same few visible leaks repeatedly block otherwise decent pages from converting traffic into money.</p>
+          </div>
+          <div class="ranges">
+            <div class="range-card"><strong>85-100</strong><p>Strong baseline. The paid report should focus on sharper copy, proof placement, and small layout improvements.</p></div>
+            <div class="range-card"><strong>70-84</strong><p>Usable but leaky. One or two unclear decisions may be wasting paid traffic or launch attention.</p></div>
+            <div class="range-card"><strong>50-69</strong><p>Likely leaking. Fix the first screen, proof, CTA, or form path before pushing more people to the page.</p></div>
+            <div class="range-card"><strong>0-49</strong><p>High leak risk. Visitors probably cannot quickly tell why to act, whether to trust the page, or what happens next.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell buy-box">
+          <div class="buy-main">
+            <h2>Want the checklist turned into exact fixes?</h2>
+            <p>The paid report reviews one real URL and converts the checklist gaps into prioritized CTA, trust, pricing, copy, layout, and mobile recommendations. It is designed to be small enough to buy and specific enough to ship.</p>
+          </div>
+          <div class="buy-card">
+            <div class="price"><strong>$29</strong><span>single page report</span></div>
+            <p>Pay with PayPal, include the page URL and target visitor action, and receive the report by email within 24 hours after payment and intake details are received.</p>
+            <a class="button" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Pay $29 with PayPal</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="section-head">
+            <h2>Checklist FAQ</h2>
+            <p>These are the common questions people search before they buy more traffic or ask for landing page feedback.</p>
+          </div>
+          <div class="faq-list">
+            <article class="faq">
+              <h3>What should I fix first?</h3>
+              <p>Fix the earliest decision point first: headline outcome, first CTA, proof near the CTA, and what happens after clicking. Later sections matter less if the first screen loses the visitor.</p>
+            </article>
+            <article class="faq">
+              <h3>Is this only for SaaS?</h3>
+              <p>No. The same checks apply to SaaS demo pages, ecommerce product pages, lead forms, course pages, paid newsletters, and service landing pages.</p>
+            </article>
+            <article class="faq">
+              <h3>Can this guarantee revenue?</h3>
+              <p>No. It identifies page-level leaks. Traffic quality, pricing, offer strength, market timing, and fulfillment still matter.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">Contact: iankim0133@gmail.com. Scope: one landing page report, 24-hour turnaround after payment and intake.</div>
+    </footer>
+
+    <script>
+      const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-points]'));
+      const scoreValue = document.getElementById('scoreValue');
+      const scoreStatus = document.getElementById('scoreStatus');
+      const issueList = document.getElementById('issueList');
+      const summaryText = document.getElementById('summaryText');
+      const openChecker = document.getElementById('openChecker');
+      const copySummary = document.getElementById('copySummary');
+      const copyStatus = document.getElementById('copyStatus');
+
+      function scoreMessage(score) {
+        if (score >= 85) {
+          return 'Strong baseline. Look for sharper copy, stronger proof placement, and small mobile improvements.';
+        }
+        if (score >= 70) {
+          return 'Usable but leaky. Fix the highest-priority unchecked items before sending more traffic.';
+        }
+        if (score >= 50) {
+          return 'Likely leaking revenue. The first screen, proof, CTA, or form path needs focused work.';
+        }
+        return 'High leak risk. Visitors may not understand the outcome, trust the offer, or know what happens next.';
+      }
+
+      function cleanIssue(issue) {
+        return issue.trim().replace(/[.!?]+$/g, '');
+      }
+
+      function updateScore() {
+        const score = checks.reduce((sum, check) => sum + (check.checked ? Number(check.dataset.points) : 0), 0);
+        const unchecked = checks.filter((check) => !check.checked);
+        const topIssues = unchecked.slice(0, 3);
+        const primaryIssue = topIssues[0]?.dataset.issue || 'No major checklist gaps selected';
+        scoreValue.textContent = score;
+        scoreStatus.textContent = scoreMessage(score);
+        issueList.innerHTML = topIssues.length
+          ? topIssues.map((check) => `<div class="issue"><strong>${check.dataset.issue}</strong><span>${check.dataset.fix}</span></div>`).join('')
+          : '<div class="issue"><strong>No unchecked gaps.</strong><span>Run the free checker or paid report to look for copy and layout improvements beyond this checklist.</span></div>';
+        summaryText.value = [
+          `Landing page checklist score: ${score}/100.`,
+          scoreMessage(score),
+          topIssues.length ? `Top leak: ${primaryIssue}` : 'Top leak: none from this checklist.',
+          'Free checker: https://yooh-an.github.io/revenue-leak-fix/',
+          'Paid report: https://www.paypal.com/ncp/payment/36Q544XLNRGN8'
+        ].join('\n');
+        openChecker.href = `index.html?site=checklist-score&score=${score}&issue=${encodeURIComponent(cleanIssue(primaryIssue))}#preview`;
+      }
+
+      checks.forEach((check) => check.addEventListener('change', updateScore));
+
+      copySummary.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(summaryText.value);
+          copyStatus.textContent = 'Summary copied.';
+        } catch (error) {
+          summaryText.focus();
+          summaryText.select();
+          copyStatus.textContent = 'Summary selected.';
+        }
+      });
+
+      updateScore();
+    </script>
+  </body>
+</html>

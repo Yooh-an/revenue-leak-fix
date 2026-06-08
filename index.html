@@ -956,6 +956,7 @@
           <a href="#deliverables">What you get</a>
           <a href="#preview">Free preview</a>
           <a href="examples.html">Examples</a>
+          <a href="checklist.html">Checklist</a>
           <a href="#start">Start</a>
           <a class="nav-cta" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
         </nav>
@@ -1332,11 +1333,13 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
         findings.push({ title, body, penalty });
       };
 
+      const cleanSharedIssue = (issue) => issue.trim().replace(/[.!?]+$/g, "");
+
       const buildShareUrl = ({ host, score, issue }) => {
         const url = new URL(checkerUrl);
         url.searchParams.set("site", host.slice(0, 80));
         url.searchParams.set("score", String(score));
-        url.searchParams.set("issue", issue.slice(0, 140));
+        url.searchParams.set("issue", cleanSharedIssue(issue).slice(0, 140));
         return url.toString();
       };
 
@@ -1345,10 +1348,11 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
 
         const safeScore = String(score).replace(/[^\d]/g, "").slice(0, 3);
         const scoreLabel = safeScore ? `${safeScore}/100` : `${score}/100`;
+        const safeIssue = issue ? cleanSharedIssue(issue) : "";
         sharedScore.hidden = false;
         sharedScoreTitle.textContent = `${site} scored ${scoreLabel}`;
-        sharedScoreBody.textContent = issue
-          ? `Biggest shared issue: ${issue}. Run the checker on your own page to see what may be leaking signups, purchases, or demos.`
+        sharedScoreBody.textContent = safeIssue
+          ? `Biggest shared issue: ${safeIssue}. Run the checker on your own page to see what may be leaking signups, purchases, or demos.`
           : "Run the checker on your own page to see what may be leaking signups, purchases, or demos.";
       };
 
