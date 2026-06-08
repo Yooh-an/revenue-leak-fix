@@ -420,6 +420,102 @@
         line-height: 1.5;
       }
 
+      .preview-box {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(340px, 1fr);
+        gap: 28px;
+        align-items: stretch;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .preview-copy {
+        padding: 28px;
+        background: var(--soft);
+      }
+
+      .preview-copy p {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .preview-form {
+        display: grid;
+        gap: 14px;
+        padding: 28px;
+      }
+
+      .preview-field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .preview-field label {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .preview-field input,
+      .preview-field select {
+        width: 100%;
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0 14px;
+        background: #fff;
+        color: var(--ink);
+        font: 14px/1.4 inherit;
+      }
+
+      .preview-output {
+        display: grid;
+        gap: 14px;
+        margin-top: 6px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .preview-output h3 {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .preview-output p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .preview-results {
+        display: grid;
+        gap: 10px;
+      }
+
+      .preview-result {
+        display: grid;
+        gap: 7px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcf8;
+      }
+
+      .preview-result strong {
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .preview-result span {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
       .proof-panel {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
@@ -575,6 +671,7 @@
         .hero,
         .section-head,
         .buy-box,
+        .preview-box,
         .proof-panel,
         .start {
           grid-template-columns: 1fr;
@@ -647,12 +744,15 @@
 
         .proof-row,
         .deliverables,
-        .steps {
+        .steps,
+        .preview-box {
           grid-template-columns: 1fr;
         }
 
         .buy-main,
-        .buy-card {
+        .buy-card,
+        .preview-copy,
+        .preview-form {
           padding: 22px;
         }
 
@@ -688,7 +788,7 @@
         <div class="brand">AI Landing Page Revenue Leak Report</div>
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#deliverables">What you get</a>
-          <a href="#process">How it works</a>
+          <a href="#preview">Free preview</a>
           <a href="#start">Start</a>
           <a class="nav-cta" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
         </nav>
@@ -701,7 +801,7 @@
             <p>Paste one URL. Get an AI-generated conversion report with prioritized leaks, CTA fixes, trust gaps, and copy changes for $29.</p>
             <div class="actions">
               <a class="button" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
-              <a class="button secondary" href="#process">See what is included</a>
+              <a class="button secondary" href="#preview">Get a free preview</a>
             </div>
             <div class="proof-row" aria-label="Offer facts">
               <div class="proof-item">
@@ -755,6 +855,39 @@
                 <h3>Mobile checklist</h3>
                 <p>Checks for first-screen clarity, button visibility, proof placement, and the next step after a visitor taps.</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="preview">
+          <div class="shell">
+            <div class="preview-box">
+              <div class="preview-copy">
+                <h2>Get a free leak preview first.</h2>
+                <p>Use the free preview to see the shape of the report before buying. It gives quick heuristic checks from your URL and goal, then the paid report reviews the actual page context and prioritizes what to change.</p>
+              </div>
+              <form class="preview-form" id="previewForm">
+                <div class="preview-field">
+                  <label for="previewUrl">Landing page URL</label>
+                  <input id="previewUrl" name="previewUrl" type="text" inputmode="url" autocomplete="url" placeholder="https://example.com" required>
+                </div>
+                <div class="preview-field">
+                  <label for="previewGoal">Main visitor action</label>
+                  <select id="previewGoal" name="previewGoal">
+                    <option value="signup">Sign up</option>
+                    <option value="purchase">Buy</option>
+                    <option value="demo">Book a demo</option>
+                    <option value="lead">Submit a lead</option>
+                  </select>
+                </div>
+                <button class="button" type="submit">Generate free preview</button>
+                <div class="preview-output" aria-live="polite">
+                  <h3 id="previewTitle">Free preview appears here</h3>
+                  <p id="previewIntro">Enter a URL and target action to generate three fast conversion checks.</p>
+                  <div class="preview-results" id="previewResults"></div>
+                  <a class="button secondary" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the full $29 report</a>
+                </div>
+              </form>
             </div>
           </div>
         </section>
@@ -889,6 +1022,35 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
       const copyButton = document.querySelector("#copyButton");
       const copyStatus = document.querySelector("#copyStatus");
       const intakeText = document.querySelector("#intakeText");
+      const previewForm = document.querySelector("#previewForm");
+      const previewUrl = document.querySelector("#previewUrl");
+      const previewGoal = document.querySelector("#previewGoal");
+      const previewTitle = document.querySelector("#previewTitle");
+      const previewIntro = document.querySelector("#previewIntro");
+      const previewResults = document.querySelector("#previewResults");
+
+      const goalCopy = {
+        signup: {
+          action: "sign up",
+          cta: "Start free with one page",
+          proof: "Show what happens after signup before asking for the email."
+        },
+        purchase: {
+          action: "buy",
+          cta: "Get the result today",
+          proof: "Move price, delivery timing, and refund or guarantee details closer to the first buy button."
+        },
+        demo: {
+          action: "book a demo",
+          cta: "Book a 15-minute fit check",
+          proof: "Explain what the buyer will learn in the call before asking for calendar time."
+        },
+        lead: {
+          action: "submit a lead",
+          cta: "Get the recommendation",
+          proof: "Reduce form anxiety by naming the response time and what the visitor receives."
+        }
+      };
 
       copyButton.addEventListener("click", async () => {
         try {
@@ -899,6 +1061,51 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
           intakeText.select();
           copyStatus.textContent = "Select and copy the intake text manually.";
         }
+      });
+
+      previewForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const rawUrl = previewUrl.value.trim();
+        let host = rawUrl;
+
+        try {
+          host = new URL(rawUrl).hostname.replace(/^www\./, "");
+        } catch {
+          host = rawUrl.replace(/^https?:\/\//, "").replace(/^www\./, "").split("/")[0];
+        }
+
+        const goal = goalCopy[previewGoal.value];
+        const results = [
+          {
+            title: "Leak 1: The first CTA may not name the outcome.",
+            body: `If the goal is to ${goal.action}, the button should say what the visitor gets next. Test: "${goal.cta}".`
+          },
+          {
+            title: "Leak 2: Trust proof may arrive after the decision point.",
+            body: goal.proof
+          },
+          {
+            title: "Leak 3: Mobile visitors may need a shorter first screen.",
+            body: "At 390px width, the visitor should see outcome, proof, and the primary action without hunting through secondary links."
+          }
+        ];
+
+        previewTitle.textContent = `Free preview for ${host}`;
+        previewIntro.textContent = "These are fast heuristic checks. The paid report reviews the actual page context and prioritizes the fixes.";
+        previewResults.textContent = "";
+
+        results.forEach((result) => {
+          const item = document.createElement("div");
+          const title = document.createElement("strong");
+          const body = document.createElement("span");
+
+          item.className = "preview-result";
+          title.textContent = result.title;
+          body.textContent = result.body;
+
+          item.append(title, body);
+          previewResults.append(item);
+        });
       });
     </script>
   </body>
