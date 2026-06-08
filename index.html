@@ -610,6 +610,42 @@
         gap: 10px;
       }
 
+      .shared-score {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--soft);
+        padding: 18px;
+        margin-top: 24px;
+      }
+
+      .shared-score[hidden] {
+        display: none;
+      }
+
+      .shared-score span {
+        display: block;
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 780;
+        text-transform: uppercase;
+      }
+
+      .shared-score h2 {
+        margin-top: 6px;
+        font-size: clamp(24px, 2.6vw, 36px);
+      }
+
+      .shared-score p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
       .share-card {
         display: grid;
         gap: 12px;
@@ -850,6 +886,10 @@
           font-size: 13px;
         }
 
+        .shared-score {
+          grid-template-columns: 1fr;
+        }
+
         .nav-cta {
           display: none;
         }
@@ -921,6 +961,15 @@
       </header>
 
       <main>
+        <div class="shell shared-score" id="sharedScore" hidden>
+          <div>
+            <span>Shared landing page score</span>
+            <h2 id="sharedScoreTitle">A landing page score was shared.</h2>
+            <p id="sharedScoreBody">Run the free checker on your own page to find the top CTA, trust, pricing, and mobile leaks.</p>
+          </div>
+          <a class="button" href="#previewUrl">Run your own check</a>
+        </div>
+
         <section id="preview" class="shell hero" aria-labelledby="hero-title">
           <div class="hero-copy">
             <h1 id="hero-title">Free AI landing page checker for revenue leaks.</h1>
@@ -1215,6 +1264,9 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
       const previewResults = document.querySelector("#previewResults");
       const copyPreviewButton = document.querySelector("#copyPreviewButton");
       const previewCopyStatus = document.querySelector("#previewCopyStatus");
+      const sharedScore = document.querySelector("#sharedScore");
+      const sharedScoreTitle = document.querySelector("#sharedScoreTitle");
+      const sharedScoreBody = document.querySelector("#sharedScoreBody");
       const shareCard = document.querySelector("#shareCard");
       const sharePostText = document.querySelector("#sharePostText");
       const copySharePostButton = document.querySelector("#copySharePostButton");
@@ -1277,6 +1329,26 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
 
       const addFinding = (findings, title, body, penalty) => {
         findings.push({ title, body, penalty });
+      };
+
+      const buildShareUrl = ({ host, score, issue }) => {
+        const url = new URL(checkerUrl);
+        url.searchParams.set("site", host.slice(0, 80));
+        url.searchParams.set("score", String(score));
+        url.searchParams.set("issue", issue.slice(0, 140));
+        return url.toString();
+      };
+
+      const showSharedScore = ({ site, score, issue }) => {
+        if (!site || !score) return;
+
+        const safeScore = String(score).replace(/[^\d]/g, "").slice(0, 3);
+        const scoreLabel = safeScore ? `${safeScore}/100` : `${score}/100`;
+        sharedScore.hidden = false;
+        sharedScoreTitle.textContent = `${site} scored ${scoreLabel}`;
+        sharedScoreBody.textContent = issue
+          ? `Biggest shared issue: ${issue}. Run the checker on your own page to see what may be leaking signups, purchases, or demos.`
+          : "Run the checker on your own page to see what may be leaking signups, purchases, or demos.";
       };
 
       const buildPreview = ({ host, goal, audience, headline, cta, proof, pricing, mobile }) => {
@@ -1403,6 +1475,13 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
         }
       });
 
+      const sharedParams = new URLSearchParams(window.location.search);
+      showSharedScore({
+        site: sharedParams.get("site"),
+        score: sharedParams.get("score"),
+        issue: sharedParams.get("issue")
+      });
+
       previewForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const rawUrl = previewUrl.value.trim();
@@ -1456,18 +1535,24 @@ I will send the AI Landing Page Revenue Leak Report within 24 hours after paymen
           "Full report: https://www.paypal.com/ncp/payment/36Q544XLNRGN8"
         ].join("\n");
 
+        const shareUrl = buildShareUrl({
+          host,
+          score: preview.score,
+          issue: preview.findings[0].title
+        });
+
         latestSharePost = [
           `I ran a free landing page revenue leak check for ${host}.`,
           `Score: ${preview.score}/100.`,
           `Biggest issue: ${preview.findings[0].title}`,
           "",
-          `Run your own check: ${checkerUrl}`
+          `Run your own check: ${shareUrl}`
         ].join("\n");
 
         shareCard.hidden = false;
         sharePostText.value = latestSharePost;
         shareX.href = `https://x.com/intent/tweet?text=${encodeURIComponent(latestSharePost)}`;
-        shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(checkerUrl)}`;
+        shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
         shareStatus.textContent = "";
 
         intakeText.value = [
