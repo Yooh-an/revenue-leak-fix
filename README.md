@@ -6,6 +6,8 @@ The first screen now includes a scored free heuristic preview so visitors can en
 
 The deployed site also includes a conversion checklist page that gives search visitors a 12-item, 100-point revenue leak score and links low-score users back into the free checker and paid report.
 
+The sample report page shows the exact style of deliverable buyers get after paying, including prioritized leaks, copy rewrites, mobile checks, and verification steps.
+
 SEO support files:
 
 - `robots.txt`
@@ -16,6 +18,7 @@ SEO landing surfaces:
 - `index.html`
 - `examples.html`
 - `checklist.html`
+- `sample-report.html`
 
 Live page: https://yooh-an.github.io/revenue-leak-fix/
 
