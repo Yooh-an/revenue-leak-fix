@@ -3,12 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Landing Page Revenue Leak Report</title>
+    <title>Free AI Landing Page Checker | Revenue Leak Preview</title>
     <link rel="icon" href="data:,">
+    <link rel="canonical" href="https://yooh-an.github.io/revenue-leak-fix/">
     <meta
       name="description"
-      content="AI-generated landing page conversion report with prioritized revenue leaks, CTA issues, trust gaps, and copy/layout fixes."
+      content="Run a free AI landing page checker for fast revenue leak, CTA, trust, and mobile conversion checks. Upgrade to a $29 one-page conversion report."
     >
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#151513">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free AI Landing Page Checker">
+    <meta property="og:description" content="Paste one URL and get a free revenue leak preview before buying the full $29 landing page report.">
+    <meta property="og:url" content="https://yooh-an.github.io/revenue-leak-fix/">
+    <meta property="og:image" content="https://yooh-an.github.io/revenue-leak-fix/assets/audit-report-visual.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free AI Landing Page Checker">
+    <meta name="twitter:description" content="Paste one URL and get a free conversion leak preview.">
+    <meta name="twitter:image" content="https://yooh-an.github.io/revenue-leak-fix/assets/audit-report-visual.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free AI Landing Page Checker",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://yooh-an.github.io/revenue-leak-fix/",
+        "description": "A free landing page revenue leak preview with an optional paid one-page conversion report.",
+        "offers": {
+          "@type": "Offer",
+          "price": "29",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "provider": {
+          "@type": "Person",
+          "email": "mailto:iankim0133@gmail.com"
+        }
+      }
+    </script>
     <style>
       :root {
         --bg: #ffffff;
@@ -210,6 +243,10 @@
         padding: 14px;
         box-shadow: 0 14px 40px rgba(21, 21, 19, 0.14);
         backdrop-filter: blur(10px);
+      }
+
+      .report-visual {
+        margin-bottom: 28px;
       }
 
       .visual-note strong {
@@ -447,6 +484,21 @@
         display: grid;
         gap: 14px;
         padding: 28px;
+      }
+
+      .hero-preview {
+        align-self: stretch;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-preview .preview-output {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--soft);
+        padding: 18px;
       }
 
       .preview-field {
@@ -795,41 +847,56 @@
       </header>
 
       <main>
-        <section class="shell hero" aria-labelledby="hero-title">
+        <section id="preview" class="shell hero" aria-labelledby="hero-title">
           <div class="hero-copy">
-            <h1 id="hero-title">Find the revenue leaks on your landing page.</h1>
-            <p>Paste one URL. Get an AI-generated conversion report with prioritized leaks, CTA fixes, trust gaps, and copy changes for $29.</p>
+            <h1 id="hero-title">Free AI landing page checker for revenue leaks.</h1>
+            <p>Paste one URL and generate a free conversion leak preview. Upgrade to the $29 report when you want the prioritized CTA, trust, copy, layout, and mobile fixes.</p>
             <div class="actions">
-              <a class="button" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
-              <a class="button secondary" href="#preview">Get a free preview</a>
+              <a class="button" href="#previewUrl">Run the free preview</a>
+              <a class="button secondary" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the $29 report</a>
             </div>
             <div class="proof-row" aria-label="Offer facts">
               <div class="proof-item">
-                <strong>1 URL</strong>
-                <span>Focused report</span>
+                <strong>Free first</strong>
+                <span>Run the preview</span>
+              </div>
+              <div class="proof-item">
+                <strong>3 checks</strong>
+                <span>Immediate output</span>
+              </div>
+              <div class="proof-item">
+                <strong>$29</strong>
+                <span>Full report</span>
               </div>
               <div class="proof-item">
                 <strong>24 hours</strong>
                 <span>Email delivery</span>
               </div>
-              <div class="proof-item">
-                <strong>$29</strong>
-                <span>Single report</span>
-              </div>
-              <div class="proof-item">
-                <strong>Actionable</strong>
-                <span>Copy and layout notes</span>
-              </div>
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="Sample audit report preview">
-            <img src="assets/audit-report-visual.png" alt="Sample browser audit report with highlighted conversion issues">
-            <div class="visual-note">
-              <strong>Sample output</strong>
-              <span>Top conversion leaks, why they matter, and the copy/layout changes to ship today.</span>
+          <form class="preview-form hero-preview" id="previewForm" aria-label="Free landing page leak preview">
+            <div class="preview-field">
+              <label for="previewUrl">Landing page URL</label>
+              <input id="previewUrl" name="previewUrl" type="text" inputmode="url" autocomplete="url" placeholder="https://example.com" required>
             </div>
-          </div>
+            <div class="preview-field">
+              <label for="previewGoal">Main visitor action</label>
+              <select id="previewGoal" name="previewGoal">
+                <option value="signup">Sign up</option>
+                <option value="purchase">Buy</option>
+                <option value="demo">Book a demo</option>
+                <option value="lead">Submit a lead</option>
+              </select>
+            </div>
+            <button class="button" type="submit">Generate free preview</button>
+            <div class="preview-output" aria-live="polite">
+              <h3 id="previewTitle">Free preview appears here</h3>
+              <p id="previewIntro">Enter a URL and target action to generate three fast conversion checks.</p>
+              <div class="preview-results" id="previewResults"></div>
+              <a class="button secondary" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the full $29 report</a>
+            </div>
+          </form>
         </section>
 
         <section id="deliverables">
@@ -855,39 +922,6 @@
                 <h3>Mobile checklist</h3>
                 <p>Checks for first-screen clarity, button visibility, proof placement, and the next step after a visitor taps.</p>
               </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="preview">
-          <div class="shell">
-            <div class="preview-box">
-              <div class="preview-copy">
-                <h2>Get a free leak preview first.</h2>
-                <p>Use the free preview to see the shape of the report before buying. It gives quick heuristic checks from your URL and goal, then the paid report reviews the actual page context and prioritizes what to change.</p>
-              </div>
-              <form class="preview-form" id="previewForm">
-                <div class="preview-field">
-                  <label for="previewUrl">Landing page URL</label>
-                  <input id="previewUrl" name="previewUrl" type="text" inputmode="url" autocomplete="url" placeholder="https://example.com" required>
-                </div>
-                <div class="preview-field">
-                  <label for="previewGoal">Main visitor action</label>
-                  <select id="previewGoal" name="previewGoal">
-                    <option value="signup">Sign up</option>
-                    <option value="purchase">Buy</option>
-                    <option value="demo">Book a demo</option>
-                    <option value="lead">Submit a lead</option>
-                  </select>
-                </div>
-                <button class="button" type="submit">Generate free preview</button>
-                <div class="preview-output" aria-live="polite">
-                  <h3 id="previewTitle">Free preview appears here</h3>
-                  <p id="previewIntro">Enter a URL and target action to generate three fast conversion checks.</p>
-                  <div class="preview-results" id="previewResults"></div>
-                  <a class="button secondary" href="https://www.paypal.com/ncp/payment/36Q544XLNRGN8">Buy the full $29 report</a>
-                </div>
-              </form>
             </div>
           </div>
         </section>
@@ -953,6 +987,13 @@
             <div class="section-head">
               <h2>Sample output</h2>
               <p>The report is concrete enough to turn into copy, layout, and mobile-check changes the same day.</p>
+            </div>
+            <div class="hero-visual report-visual" aria-label="Sample audit report preview">
+              <img src="assets/audit-report-visual.png" alt="Sample browser audit report with highlighted conversion issues">
+              <div class="visual-note">
+                <strong>Sample output</strong>
+                <span>Top conversion leaks, why they matter, and the copy/layout changes to ship today.</span>
+              </div>
             </div>
             <div class="proof-panel">
               <div class="sample" aria-label="Sample finding structure">

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yooh-an.github.io/revenue-leak-fix/sitemap.xml
